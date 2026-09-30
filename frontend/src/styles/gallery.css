@@ -1,0 +1,190 @@
+/*
+  Premium Gallery Layout System
+  ─────────────────────────────────────────────────────────────────────────────
+  Grid: 4 col (≥1280px) → 3 col (≥1024px) → 2 col (≥640px) → 1 col (<640px)
+  Image cells: fixed 4:3 aspect-ratio to prevent layout shifts
+*/
+
+/* ── Gallery Card ────────────────────────────────────────────────────────── */
+
+.gallery-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  /* Consistent shadow baseline */
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.06),
+    0 1px 3px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  background: #f1f5f9;
+  /* Smooth all transitions */
+  transition:
+    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+  will-change: transform;
+}
+
+.gallery-card:hover {
+  transform: scale(1.025) translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.14),
+    0 4px 12px rgba(15, 23, 42, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+  cursor: pointer;
+}
+
+/* ── Card inner — fluid height ───────────────────────────────────────────── */
+
+.gallery-card__inner {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  background: #e2e8f0;
+  display: flex;
+}
+
+/* ── Skeleton (shown until image loads) ─────────────────────────────────── */
+
+.gallery-card__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #f1f5f9 50%,
+    #e2e8f0 75%
+  );
+  background-size: 200% 100%;
+  animation: gallery-shimmer 1.5s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gallery-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Image ──────────────────────────────────────────────────────────────── */
+
+.gallery-card__img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition:
+    opacity 400ms ease,
+    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+}
+
+.gallery-card__img--loaded {
+  opacity: 1;
+}
+
+.gallery-card:hover .gallery-card__img {
+  transform: scale(1.06);
+}
+
+/* ── Hover overlay ──────────────────────────────────────────────────────── */
+
+.gallery-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.75) 0%,
+    rgba(15, 23, 42, 0.15) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 3;
+}
+
+.gallery-card:hover .gallery-card__overlay {
+  opacity: 1;
+}
+
+/* ── Hover content (badge + zoom icon) ──────────────────────────────────── */
+
+.gallery-card__hover-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+  z-index: 4;
+}
+
+.gallery-card:hover .gallery-card__hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-card__category-badge {
+  background: rgba(245, 158, 11, 0.92);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.gallery-card__zoom-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.gallery-card:hover .gallery-card__zoom-icon {
+  background: rgba(245, 158, 11, 0.85);
+  transform: scale(1.1);
+}
+
+/* ── Skeleton Grid (initial load) ───────────────────────────────────────── */
+
+.gallery-skeleton-card {
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #f1f5f9 50%,
+    #e2e8f0 75%
+  );
+  background-size: 200% 100%;
+  animation: gallery-shimmer 1.5s ease infinite;
+  border: 1px solid rgba(226, 232, 240, 0.4);
+  width: 100%;
+}
+
+/* ── Scrollbar hide utility (for category pills row) ───────────────────── */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

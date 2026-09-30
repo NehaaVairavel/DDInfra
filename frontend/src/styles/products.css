@@ -1,0 +1,165 @@
+/* 
+  Products Page Layout & Grid System
+*/
+
+.products-layout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.products-main-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding: 0 24px;
+}
+
+/* Sidebar */
+.products-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: #FCFCFD;
+  border-radius: 24px;
+  border: 1px solid #EEF2F7;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.04);
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.products-sidebar:hover {
+  box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Inside drawer, reset sidebar width */
+.fixed .products-sidebar {
+  width: 100%;
+}
+
+/* Sidebar Hover/Active States */
+.category-btn {
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.category-btn:hover {
+  background: #FFF8EC !important;
+  border-left: 3px solid #F5B301 !important;
+  color: #111827 !important;
+}
+
+.category-btn.active {
+  background: #FFF3D6 !important;
+  border-left: 3px solid #F5B301 !important;
+  color: #111827 !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+/* Sticky Toolbar */
+.products-filter-toolbar {
+  position: sticky;
+  top: 90px;
+  z-index: 50;
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Multi-Column Grid */
+.products-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Responsive Grid Columns */
+@media (min-width: 1400px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .products-sidebar {
+    display: none; /* Handled by drawer in JSX */
+  }
+}
+
+/* ── Filter Toolbar Responsive ── */
+@media (max-width: 639px) {
+  /* The toolbar grid becomes single column on small screens */
+  .products-toolbar-wrapper > div {
+    grid-template-columns: 1fr !important;
+    width: calc(100% - 16px) !important;
+  }
+  /* Search bar label wrapping */
+  .products-toolbar-wrapper select,
+  .products-toolbar-wrapper input {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Shrink product hero title on very small screens */
+  .products-hero-title {
+    font-size: 26px !important;
+  }
+}
+
+/* Scroll shadow for sticky toolbar */
+.products-filter-toolbar.scrolled {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: #e2e8f0;
+}
+
+/* Custom Scrollbar for Sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D6DCE5;
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Slim Custom Scrollbar for Sidebar */
+.custom-scrollbar-slim::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-slim::-webkit-scrollbar-thumb {
+  background: #d6dce5;
+  border-radius: 10px;
+}
+

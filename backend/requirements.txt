@@ -1,0 +1,13 @@
+flask
+flask-cors
+flask-bcrypt
+flask-jwt-extended
+pymongo
+python-dotenv
+certifi
+boto3
+gunicorn
+dnspython
+flask-socketio
+gevent
+gevent-websocket
