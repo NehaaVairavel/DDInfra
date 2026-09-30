@@ -273,8 +273,11 @@ def sync_admin_from_runtime_env():
     password = os.getenv("ADMIN_PASSWORD")
     
     if not username or not email or not password:
-        print("[!] Critical: Admin credentials missing in Easypanel/Runtime Env. Skipping sync.", flush=True)
+        print("[!] Critical: ADMIN_USERNAME / ADMIN_EMAIL / ADMIN_PASSWORD missing in environment. Skipping sync.", flush=True)
+        print(f"[!] ADMIN_USERNAME present: {bool(username)}, ADMIN_EMAIL present: {bool(email)}, ADMIN_PASSWORD present: {bool(password)}", flush=True)
         return
+    
+    print(f"[✓] Syncing admin — username={username}, email={email}", flush=True)
     
     try:
         # 1. Force remove all existing admin accounts
@@ -285,12 +288,11 @@ def sync_admin_from_runtime_env():
         admins_col.insert_one({
             "username": username,
             "email": email,
-            "password": password, # Exact plain-text value
+            "password": password,  # Plain-text; compared directly at login
             "role": "superadmin",
             "created_at": datetime.utcnow().isoformat()
         })
-        print("[✓] Loaded latest Easypanel env variables", flush=True)
-        print("[✓] New admin inserted successfully", flush=True)
+        print("[✓] Admin synced from environment variables successfully", flush=True)
     except Exception as e:
         print(f"[✗] Failed to sync admin: {e}", flush=True)
 
@@ -322,28 +324,55 @@ def login():
     if not login_id or not password:
         return jsonify({"message": "Identifier and password required"}), 400
 
-    # Find user by username OR email
+    # ── Primary path: look up admin in MongoDB (populated by sync_admin_from_runtime_env) ──
     user = admins_col.find_one({"$or": [
         {"username": login_id},
         {"email": login_id}
     ]})
     
-    if not user:
-        print(f"[✗] Admin not found: {login_id}")
-        return jsonify({"message": "Invalid credentials"}), 401
-        
-    if user["password"] != password:
-        print(f"[✗] Wrong password for: {login_id}")
-        return jsonify({"message": "Invalid credentials"}), 401
-        
-    print(f"[✓] Login success: {login_id}")
-    token = create_access_token(identity=str(user["_id"]))
-    return jsonify({
-        "token": token,
-        "username": user["username"],
-        "email": user.get("email", ""),
-        "role": user.get("role", "superadmin")
-    }), 200
+    if user:
+        stored_password = user.get("password", "")
+        if stored_password != password:
+            print(f"[✗] Wrong password for: {login_id}", flush=True)
+            return jsonify({"message": "Invalid credentials"}), 401
+        print(f"[✓] Login success (DB): {login_id}", flush=True)
+        token = create_access_token(identity=str(user["_id"]))
+        return jsonify({
+            "token": token,
+            "username": user["username"],
+            "email": user.get("email", ""),
+            "role": user.get("role", "superadmin")
+        }), 200
+
+    # ── Fallback path: compare directly against env vars if MongoDB sync had not run ──
+    # This ensures login still works even if the startup DB sync failed.
+    env_username = os.getenv("ADMIN_USERNAME", "")
+    env_email    = os.getenv("ADMIN_EMAIL", "")
+    env_password = os.getenv("ADMIN_PASSWORD", "")
+
+    if env_username and env_email and env_password:
+        id_matches = (login_id == env_username or login_id == env_email)
+        if id_matches and password == env_password:
+            print(f"[✓] Login success (env fallback): {login_id}", flush=True)
+            # Re-run sync so DB is populated for future requests
+            try:
+                sync_admin_from_runtime_env()
+                user = admins_col.find_one({"username": env_username})
+            except Exception:
+                pass
+            if user:
+                token = create_access_token(identity=str(user["_id"]))
+            else:
+                token = create_access_token(identity="env_admin")
+            return jsonify({
+                "token": token,
+                "username": env_username,
+                "email": env_email,
+                "role": "superadmin"
+            }), 200
+
+    print(f"[✗] Admin not found or wrong credentials: {login_id}", flush=True)
+    return jsonify({"message": "Invalid credentials"}), 401
 
 
 @app.route("/api/me", methods=["GET"])
