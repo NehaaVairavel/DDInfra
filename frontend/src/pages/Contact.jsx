@@ -102,9 +102,8 @@ const Contact = () => {
                     title: "Phone & WhatsApp",
                     content: (
                       <div className="mt-2 flex flex-col gap-2">
-                    <a href="tel:+919342429045" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">🇮🇳 India: 93424 29045</a>
-                      <a href="mailto:Ddinfraandco@gmail.com" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">📧 Email: Ddinfraandco@gmail.com</a>
-                      <a href={`https://wa.me/${settings?.whatsapp || "919342429045"}`} className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">💬 WhatsApp: 93424 29045</a>
+                        <a href="tel:+919342429045" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">📞 93424 29045</a>
+                        <a href="https://wa.me/919342429045" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">💬 WhatsApp: 93424 29045</a>
                       </div>
                     ),
                   },
