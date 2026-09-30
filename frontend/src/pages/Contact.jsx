@@ -95,23 +95,23 @@ const Contact = () => {
                   {
                     icon: MapPin,
                     title: "Corporate Office",
-                    content: <p className="text-sm font-medium text-muted-foreground mt-1">Building A1, Dubai Digital Park,<br />Dubai Silicon Oasis, Dubai, UAE</p>,
+                    content: <p className="text-sm font-medium text-muted-foreground mt-1">No. 1104, 200 Feet Radial Road,<br />Old Pallavaram</p>,
                   },
                   {
                     icon: Phone,
                     title: "Phone & WhatsApp",
                     content: (
                       <div className="mt-2 flex flex-col gap-2">
-                        <a href={`tel:${settings?.phone || "+971558599045"}`} className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">🇦🇪 Dubai: {settings?.phone || "+971 55 859 9045"}</a>
-                        <a href="tel:+918778868739" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">🇮🇳 India: +91 877 886 8739</a>
-                        <a href={`https://wa.me/${settings?.whatsapp || "971558599045"}`} className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">💬 WhatsApp: {settings?.whatsapp || "+971 55 859 9045"}</a>
+                    <a href="tel:+919342429045" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">🇮🇳 India: 93424 29045</a>
+                      <a href="mailto:Ddinfraandco@gmail.com" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">📧 Email: Ddinfraandco@gmail.com</a>
+                      <a href={`https://wa.me/${settings?.whatsapp || "919342429045"}`} className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors block">💬 WhatsApp: 93424 29045</a>
                       </div>
                     ),
                   },
                   {
                     icon: Mail,
                     title: "Email Address",
-                    content: <a href={`mailto:${settings?.email || "[DDINFRA_EMAIL]"}`} className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors mt-1 block">{settings?.email || "[DDINFRA_EMAIL]"}</a>,
+                    content: <a href="mailto:Ddinfraandco@gmail.com" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors mt-1 block">Ddinfraandco@gmail.com</a>,
                   },
                 ].map((item, i) => (
                   <motion.div key={item.title} variants={staggerItem} className="flex items-start gap-3 group">
@@ -122,7 +122,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="mt-8 pt-4 border-t border-border/50 relative z-10">
-                 <a href={`https://wa.me/${settings?.whatsapp || "[DDINFRA_PHONE]"}`} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-green-500 text-white font-display font-bold py-3 px-4 rounded-xl hover:shadow-lg transition-all duration-400"><MessageCircle size={18} /> WhatsApp Support</a>
+                 <a href="https://wa.me/919342429045" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-green-500 text-white font-display font-bold py-3 px-4 rounded-xl hover:shadow-lg transition-all duration-400"><MessageCircle size={18} /> WhatsApp Support</a>
               </div>
             </div>
           </motion.div>

@@ -45,13 +45,13 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-3 group cursor-default relative">
               <img 
                 src={logo} 
-                alt="DDInfra and Co" 
+                alt="DD Infra & CO" 
                 className="h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] relative z-10" 
               />
               <div className="h-8 w-[1px] bg-white/20 mx-1.5 hidden sm:block relative z-10" />
               <div className="flex flex-col relative z-10">
-                 <span className="font-display font-bold text-lg tracking-wide text-[#EAEAEA] leading-none antialiased">DDInfra</span>
-                 <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-primary mt-0.5">And Co</span>
+                 <span className="font-display font-bold text-lg tracking-wide text-[#EAEAEA] leading-none antialiased">DD Infra & CO</span>
+                 <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-primary mt-0.5">Heavy Equipment</span>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ const Footer = () => {
                 <div className="flex flex-col pt-0.5">
                   <span className="text-[9px] font-semibold text-[#EAEAEA]/60 uppercase tracking-[0.15em] mb-0.5">Our Location</span>
                   <span className="text-white text-[13px] font-medium antialiased group-hover:text-primary transition-colors duration-300">
-                    [DDINFRA_ADDRESS]
+                    No. 1104, 200 Feet Radial Road, Old Pallavaram
                   </span>
                 </div>
               </div>
@@ -134,8 +134,8 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col pt-0.5 gap-1">
                   <span className="text-[9px] font-semibold text-[#EAEAEA]/60 uppercase tracking-[0.15em]">Call Now</span>
-                  <a href="tel:[DDINFRA_PHONE]" className="text-[#EAEAEA] text-[13px] font-black tracking-wide hover:text-primary transition-colors antialiased">
-                    [DDINFRA_PHONE]
+                  <a href="tel:+919342429045" className="text-[#EAEAEA] text-[13px] font-black tracking-wide hover:text-primary transition-colors antialiased">
+                    93424 29045
                   </a>
                 </div>
               </div>
@@ -147,8 +147,8 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col pt-0.5">
                   <span className="text-[9px] font-semibold text-[#EAEAEA]/60 uppercase tracking-[0.15em] mb-0.5">Email Support</span>
-                  <a href="mailto:[DDINFRA_EMAIL]" className="text-[#EAEAEA] text-[13px] font-medium hover:text-primary transition-colors antialiased">
-                    [DDINFRA_EMAIL]
+                  <a href="mailto:Ddinfraandco@gmail.com" className="text-[#EAEAEA] text-[13px] font-medium hover:text-primary transition-colors antialiased">
+                    Ddinfraandco@gmail.com
                   </a>
                 </div>
               </div>
@@ -162,11 +162,11 @@ const Footer = () => {
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/10" />
           
           <div className="text-[11px] text-[#EAEAEA]/70 font-medium uppercase tracking-[0.1em] antialiased hover:text-[#EAEAEA] transition-colors duration-300">
-            © 2026 DDInfra and Co. All rights reserved.
+            © 2026 DD Infra & CO. All rights reserved.
           </div>
           
           <div className="flex items-center gap-3 text-[11px] text-[#EAEAEA]/70 font-medium uppercase tracking-[0.1em] antialiased text-center hover:text-[#EAEAEA] transition-colors duration-300">
-             <span>[DDINFRA_DOMAIN]</span>
+             <span>ddinfraandco.com</span>
              <span className="text-primary/50 text-[14px] leading-none">•</span>
              <span>Infrastructure Excellence</span>
              <span className="text-primary/50 text-[14px] leading-none">•</span>

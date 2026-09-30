@@ -250,7 +250,7 @@ const AdminLayout = () => {
               border: "1px solid #EAECEF",
             }}
           >
-            <img src={logo} alt="DDInfra and Co" className="h-5 w-auto object-contain" />
+            <img src={logo} alt="DD Infra & CO" className="h-5 w-auto object-contain" />
           </div>
           <div className="flex flex-col">
             <span
@@ -263,13 +263,13 @@ const AdminLayout = () => {
                 lineHeight: 1.2,
               }}
             >
-              DDInfra
+              DD Infra & CO
             </span>
             <span
               className="admin-label-small"
               style={{ color: "#F5B301", fontSize: "9px" }}
             >
-              And Co
+              Heavy Equipment
             </span>
           </div>
 

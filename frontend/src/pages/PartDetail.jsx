@@ -88,7 +88,7 @@ const PartDetail = () => {
     if (navigator.share) {
       navigator.share({
         title: part?.name || 'DDInfra Part',
-        text: `Check out this ${part?.name} on DDInfra and Co`,
+        text: `Check out this ${part?.name} on DD Infra & CO`,
         url: window.location.href,
       }).catch(console.error);
     } else {

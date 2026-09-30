@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Introduction</h2>
               <p>
-                Welcome to DDInfra and Co. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and services.
+                Welcome to DD Infra & CO. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and services.
               </p>
             </section>
 
@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Information Sharing</h2>
               <p>
-                DDInfra and Co does not sell or rent your personal information to third parties. Information may be shared only when required to connect buyers and sellers or comply with legal obligations.
+                DD Infra & CO does not sell or rent your personal information to third parties. Information may be shared only when required to connect buyers and sellers or comply with legal obligations.
               </p>
             </section>
 
@@ -90,7 +90,7 @@ const PrivacyPolicy = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Changes to Policy</h2>
               <p>
-                DDInfra and Co reserves the right to update this Privacy Policy at any time. Changes will be reflected on this page.
+                DD Infra & CO reserves the right to update this Privacy Policy at any time. Changes will be reflected on this page.
               </p>
             </section>
 
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl mb-4">Contact Us</h2>
               <p>
                 If you have any questions regarding this Privacy Policy, you can contact us at:<br />
-                <span className="font-bold text-heading">Email: [DDINFRA_EMAIL]</span>
+                <span className="font-bold text-heading">Email: Ddinfraandco@gmail.com</span>
               </p>
             </section>
           </div>

@@ -409,7 +409,7 @@ const Index = () => {
             <h2 className="text-xl md:text-2xl lg:text-3xl font-display font-black text-white mb-2 drop-shadow-lg tracking-tight">Ready to Upgrade Your Fleet?</h2>
             <p className="text-white/90 mb-3 max-w-[480px] mx-auto text-sm font-semibold drop-shadow-md">Get competitive pricing, global shipping logistics, and expert consultation from our Dubai headquarters.</p>
             <div className="flex flex-col items-center justify-center gap-1.5">
-              <a href={`https://wa.me/${siteSettings?.whatsapp || "[DDINFRA_PHONE]"}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-white text-primary px-5 py-2 rounded-xl font-display font-black text-sm hover:scale-[1.03] hover:brightness-105 shadow-[0_8px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-400 group relative overflow-hidden">
+              <a href={`https://wa.me/${siteSettings?.whatsapp || "919342429045"}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-white text-primary px-5 py-2 rounded-xl font-display font-black text-sm hover:scale-[1.03] hover:brightness-105 shadow-[0_8px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-400 group relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">Start Your Enquiry <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" /></span>
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
               </a>

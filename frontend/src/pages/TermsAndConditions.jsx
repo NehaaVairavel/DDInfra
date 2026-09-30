@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import AnimatedGear from "@/components/AnimatedGear";
 
 const TermsAndConditions = () => {
@@ -30,14 +30,14 @@ const TermsAndConditions = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Introduction</h2>
               <p>
-                Welcome to DDInfra and Co. By accessing or using our website, services, or tools, you agree to comply with and be bound by the following Terms &amp; Conditions. If you do not agree with any part of these terms, please do not use our platform.
+                Welcome to DD Infra & CO. By accessing or using our website, services, or tools, you agree to comply with and be bound by the following Terms &amp; Conditions. If you do not agree with any part of these terms, please do not use our platform.
               </p>
             </section>
 
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Our Services</h2>
               <p>
-                DDInfra and Co is a platform that allows users to buy, sell, or enquire about heavy infrastructure equipment, spare parts, and machinery. We act as a platform that connects buyers and sellers and are not responsible for the accuracy or authenticity of the uploaded equipment details.
+                DD Infra & CO is a platform that allows users to buy, sell, or enquire about heavy infrastructure equipment, spare parts, and machinery. We act as a platform that connects buyers and sellers and are not responsible for the accuracy or authenticity of the uploaded equipment details.
               </p>
             </section>
 
@@ -57,7 +57,7 @@ const TermsAndConditions = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Equipment Listings</h2>
               <p>
-                When a user uploads an equipment listing, DDInfra and Co reviews the post. Approval or rejection is based on completeness, quality, and accuracy of the data. DDInfra and Co reserves the right to remove or reject any listing without prior notice if we find it misleading or inappropriate.
+                When a user uploads an equipment listing, DD Infra & CO reviews the post. Approval or rejection is based on completeness, quality, and accuracy of the data. DD Infra & CO reserves the right to remove or reject any listing without prior notice if we find it misleading or inappropriate.
               </p>
             </section>
 
@@ -71,13 +71,13 @@ const TermsAndConditions = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Payments</h2>
               <p>
-                DDInfra and Co does not collect or process payments directly for equipment transactions. All payments and financial dealings take place strictly between the buyer and seller. Users are advised to practice caution and verify the seller before making any payment.
+                DD Infra & CO does not collect or process payments directly for equipment transactions. All payments and financial dealings take place strictly between the buyer and seller. Users are advised to practice caution and verify the seller before making any payment.
               </p>
             </section>
 
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Refund Policy</h2>
-              <p>DDInfra and Co does not handle or control payments between buyers and sellers; we do not provide refunds for equipment purchases or deals. If you have subscribed to any paid service on DDInfra and Co, the respective service guidelines and policies will apply.
+              <p>DD Infra & CO does not handle or control payments between buyers and sellers; we do not provide refunds for equipment purchases or deals. If you have subscribed to any paid service on DD Infra & CO, the respective service guidelines and policies will apply.
               </p>
             </section>
 
@@ -86,7 +86,7 @@ const TermsAndConditions = () => {
               <p>You may link to our website under the following conditions:</p>
               <ol className="list-decimal pl-5 mt-4 space-y-2 text-muted-foreground">
                 <li>The link should not misrepresent partnership or endorsement.</li>
-                <li>You must not use DDInfra and Co's logo without written permission.</li>
+                <li>You must not use DD Infra & CO's logo without written permission.</li>
                 <li>The linking website must not contain harmful, illegal, or misleading content.</li>
               </ol>
             </section>
@@ -94,14 +94,14 @@ const TermsAndConditions = () => {
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Email Communication</h2>
               <p>
-                By using DDInfra and Co, you agree to receive emails related to account activity, notifications, inquiries, and system updates. If you wish to stop receiving marketing emails, you can unsubscribe at any time.
+                By using DD Infra & CO, you agree to receive emails related to account activity, notifications, inquiries, and system updates. If you wish to stop receiving marketing emails, you can unsubscribe at any time.
               </p>
             </section>
 
             <section className="mb-10">
               <h2 className="text-2xl mb-4">Disclaimer</h2>
               <p>
-                DDInfra and Co is not responsible for any losses, damages, disputes, or fraud that may occur between buyers and sellers. All equipment details, images, and documents are uploaded by users, and DDInfra and Co does not guarantee their accuracy. Buyers are strongly advised to inspect equipment physically before making payments.
+                DD Infra & CO is not responsible for any losses, damages, disputes, or fraud that may occur between buyers and sellers. All equipment details, images, and documents are uploaded by users, and DD Infra & CO does not guarantee their accuracy. Buyers are strongly advised to inspect equipment physically before making payments.
               </p>
             </section>
 
@@ -109,14 +109,14 @@ const TermsAndConditions = () => {
               <h2 className="text-2xl mb-4">Contact Us</h2>
               <p>
                 If you have any questions regarding these Terms &amp; Conditions, you can contact us at:<br />
-                <span className="font-bold text-heading">Email: [DDINFRA_EMAIL]</span>
+                <span className="font-bold text-heading">Email: Ddinfraandco@gmail.com</span>
               </p>
             </section>
 
             <section className="mt-12 pt-8 border-t border-border/50">
               <p className="font-bold text-heading text-lg">Agreement</p>
               <p>
-                By using DDInfra and Co, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.
+                By using DD Infra & CO, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.
               </p>
             </section>
           </div>
@@ -127,3 +127,4 @@ const TermsAndConditions = () => {
 };
 
 export default TermsAndConditions;
+

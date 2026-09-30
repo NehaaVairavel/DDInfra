@@ -265,7 +265,7 @@ const AdminSettings = () => {
                     value={settings.company_name}
                     onChange={handleInputChange}
                     icon={Building}
-                    placeholder="DDInfra and Co"
+                    placeholder="DD Infra & CO"
                   />
                   <Input
                     label="Support Email"
@@ -328,7 +328,7 @@ const AdminSettings = () => {
                   onChange={handleInputChange}
                   className="admin-textarea"
                   style={{ height: "120px" }}
-                  placeholder="Welcome to DDInfra and Co..."
+                  placeholder="Welcome to DD Infra & CO..."
                 />
               </div>
               <div

@@ -31,7 +31,7 @@ const Login = () => {
             S
           </div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Admin Portal</h1>
-          <p className="text-slate-500 text-sm mt-1">Sign in to manage DDInfra and Co</p>
+          <p className="text-slate-500 text-sm mt-1">Sign in to manage DD Infra & CO</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-5">
@@ -85,7 +85,7 @@ const Login = () => {
         </form>
 
         <div className="mt-8 text-center text-xs text-slate-400 font-medium">
-          Secure Access • DDInfra and Co
+          Secure Access • DD Infra & CO
         </div>
       </div>
     </div>

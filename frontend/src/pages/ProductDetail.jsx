@@ -84,7 +84,7 @@ const ProductDetail = () => {
     if (navigator.share) {
       navigator.share({
         title: product?.name || 'DDInfra Machine',
-        text: `Check out this ${product?.name} on DDInfra and Co`,
+        text: `Check out this ${product?.name} on DD Infra & CO`,
         url: window.location.href,
       }).catch(console.error);
     } else {

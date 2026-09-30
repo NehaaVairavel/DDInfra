@@ -64,15 +64,15 @@ const Navbar = () => {
         <Link to="/" onClick={handleHomeClick} className="flex items-center gap-4 group flex-shrink-0">
           <img
             src={logo}
-            alt="DDInfra and Co"
+            alt="DD Infra & CO"
             className="h-12 w-auto drop-shadow-xl group-hover:scale-105 transition-all duration-500"
           />
           <div className="hidden sm:flex flex-col leading-tight pt-1">
             <span className="font-display font-black text-heading text-[18px] tracking-tight transition-all duration-500">
-              DD<span className="text-primary drop-shadow-[0_0_8px_rgba(245,158,11,0.3)]">Infra</span>
+              DD<span className="text-primary drop-shadow-[0_0_8px_rgba(245,158,11,0.3)]">Infra</span> <span className="text-primary">& CO</span>
             </span>
-            <span className="font-display font-black text-[11px] md:text-[12px] text-primary uppercase tracking-[0.38em] mt-1 transition-all duration-300 opacity-100 drop-shadow-[0_0_10px_rgba(245,158,11,0.3)]">
-              AND CO
+            <span className="font-display font-black text-[11px] md:text-[12px] text-muted-foreground uppercase tracking-[0.20em] mt-1 transition-all duration-300 opacity-100">
+              Heavy Equipment & Infrastructure
             </span>
           </div>
         </Link>
