@@ -65,7 +65,12 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode=os.getenv("SOCKETI
 MONGO_URI    = os.getenv("MONGO_URI")
 MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "ddinfra")
 
-client = MongoClient(MONGO_URI, tls=True, tlsCAFile=certifi.where())
+client = MongoClient(
+    MONGO_URI,
+    tls=True,
+    tlsCAFile=certifi.where(),
+    serverSelectionTimeoutMS=30000
+)
 db     = client[MONGO_DB_NAME]
 
 products_col  = db["products"]

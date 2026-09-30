@@ -2,7 +2,7 @@ flask
 flask-cors
 flask-bcrypt
 flask-jwt-extended
-pymongo
+pymongo>=4.13,<5
 python-dotenv
 certifi
 boto3
